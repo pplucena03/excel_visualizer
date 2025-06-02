@@ -2,18 +2,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Chart</title>
+    <title>Charts</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/chart.css' %}">
 </head>
 <body>
     <div class="container">
-        <h2>Sales Chart</h2>
-        <div id="chart-data"
-             data-labels='{{ labels|safe }}'
-             data-sales='{{ sales|safe }}'>
+        <div class="charts-grid">
+            
+            <!--Gráfico 1-->
+            <div class="chart-card">
+                <h2>Sales Chart</h2>
+
+                <div class="chart-data"
+                data-labels='{{ labels|safe }}'
+                data-sales='{{ sales|safe }}'>
+                </div>
+
+                <canvas id="barSalesChart"></canvas>   
+            </div>
+
+            <!--Gráfico 2-->
+            <div class="chart-card">
+               
+                <div class="chart-data"
+                data-labels='{{ labels|safe }}'
+                data-sales='{{ sales|safe }}'>
+                </div>
+
+                <canvas id="doughnutSalesChart"></canvas>   
+            </div>
         </div>
-        <canvas id="salesChart"></canvas>
     </div>
 
     <script src="{% static 'js/chart.js' %}"></script>
