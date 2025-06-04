@@ -2,17 +2,6 @@ from django.shortcuts import render
 import pandas as pd
 import json
 
-def your_view(request):
-    # Just for example:
-    labels = ['January', 'February', 'March']
-    sales = [100, 200, 300]
-
-    context = {
-        'labels': json.dumps(labels),
-        'sales': json.dumps(sales),
-    }
-    return render(request, 'your_template.html', context)
-
 def upload_file(request):
     if request.method == 'POST' and request.FILES.get('excel_file'):
         file = request.FILES['excel_file']
